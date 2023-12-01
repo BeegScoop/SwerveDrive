@@ -27,7 +27,7 @@ public final class Constants {
     public static final double kTurnEncoderRPM2RadPerSec = 0;
   }
   public static class ModuleConstants{
-    //confirm these values 
+    //confirm these values -  confirmed
     public static final double kWheelDiameterMeters = Units.inchesToMeters(4);
     public static final double kDriveMotorGearRatio = 1/6.75;
     public static final double kTurningMotorGearRatio = 1/(150/7);
@@ -35,18 +35,20 @@ public final class Constants {
     public static final double kTurningEncoderRot2Rad = kTurningMotorGearRatio * 2 * Math.PI;
     public static final double kDriveEncoderRPM2MeterPerSec = kDriveEncoderRot2Meter/60;
     public static final double kTurningEncoderRPM2RadPerSec = kTurningEncoderRot2Rad/60;
+    //wtf this do
     public static final double kPTurning = 0.5;
   }
   public static class DriveConstants{
+    // Distance between right and left wheels
     public static final double kTrackWidth = Units.inchesToMeters(15.5);
-        // Distance between right and left wheels
-        public static final double kWheelBase = Units.inchesToMeters(26);
-        // Distance between front and back wheels
-        public static final SwerveDriveKinematics kDriveKinematics = new SwerveDriveKinematics(
-                new Translation2d(kWheelBase / 2, -kTrackWidth / 2),
-                new Translation2d(kWheelBase / 2, kTrackWidth / 2),
-                new Translation2d(-kWheelBase / 2, -kTrackWidth / 2),
-                new Translation2d(-kWheelBase / 2, kTrackWidth / 2));
+    // Distance between front and back wheels
+    public static final double kWheelBase = Units.inchesToMeters(26);
+    public static final SwerveDriveKinematics kDriveKinematics = new SwerveDriveKinematics(
+      new Translation2d(kWheelBase / 2, -kTrackWidth / 2),
+      new Translation2d(kWheelBase / 2, kTrackWidth / 2),
+      new Translation2d(-kWheelBase / 2, -kTrackWidth / 2),
+      new Translation2d(-kWheelBase / 2, kTrackWidth / 2)
+      );
 
 
 
@@ -60,7 +62,7 @@ public final class Constants {
     public static final double kTeleDriveMaxAngularAccelerationUnitsPerSecond = 3;
     
     
-    
+    //still need to be confirmed
     public static final int kFrontLeftDriveMotorPort = 0;
     public static final int kBackLeftDriveMotorPort = 0;
     public static final int kFrontRightDriveMotorPort = 0;
