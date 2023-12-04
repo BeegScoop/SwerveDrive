@@ -63,30 +63,30 @@ public final class Constants {
     
     
     //still need to be confirmed
-    public static final int kFrontLeftDriveMotorPort = 0;
-    public static final int kBackLeftDriveMotorPort = 0;
-    public static final int kFrontRightDriveMotorPort = 0;
-    public static final int kBackRightDriveMotorPort = 0;
+    public static final int kFrontLeftDriveMotorPort = 13;
+    public static final int kBackLeftDriveMotorPort = 3;
+    public static final int kFrontRightDriveMotorPort = 4;
+    public static final int kBackRightDriveMotorPort = 8;
 
-    public static final int kFrontLeftTurningMotorPort = 0;
-    public static final int kBackLeftTurningMotorPort = 0;
-    public static final int kFrontRightTurningMotorPort = 0;
-    public static final int kBackRightTurningMotorPort = 0;
+    public static final int kFrontLeftTurningMotorPort = 11;
+    public static final int kBackLeftTurningMotorPort = 5;
+    public static final int kFrontRightTurningMotorPort = 14;
+    public static final int kBackRightTurningMotorPort = 10;
 
-    public static final boolean kFrontLeftTurningEncoderReversed = true;
-    public static final boolean kBackLeftTurningEncoderReversed = true;
-    public static final boolean kFrontRightTurningEncoderReversed = true;
-    public static final boolean kBackRightTurningEncoderReversed = true;
+    public static final boolean kFrontLeftTurningEncoderReversed = false;
+    public static final boolean kBackLeftTurningEncoderReversed = false;
+    public static final boolean kFrontRightTurningEncoderReversed = false;
+    public static final boolean kBackRightTurningEncoderReversed = false;
 
-    public static final boolean kFrontLeftDriveEncoderReversed = true;
-    public static final boolean kBackLeftDriveEncoderReversed = true;
+    public static final boolean kFrontLeftDriveEncoderReversed = false;
+    public static final boolean kBackLeftDriveEncoderReversed = false;
     public static final boolean kFrontRightDriveEncoderReversed = false;
     public static final boolean kBackRightDriveEncoderReversed = false;
 
-    public static final int kFrontLeftDriveAbsoluteEncoderPort = 0;
-    public static final int kBackLeftDriveAbsoluteEncoderPort = 0;
-    public static final int kFrontRightDriveAbsoluteEncoderPort = 0;
-    public static final int kBackRightDriveAbsoluteEncoderPort = 0;
+    public static final int kFrontLeftDriveAbsoluteEncoderPort = 21;
+    public static final int kBackLeftDriveAbsoluteEncoderPort = 20;
+    public static final int kFrontRightDriveAbsoluteEncoderPort = 23;
+    public static final int kBackRightDriveAbsoluteEncoderPort = 22;
 
     public static final boolean kFrontLeftDriveAbsoluteEncoderReversed = false;
     public static final boolean kBackLeftDriveAbsoluteEncoderReversed = false;
@@ -107,6 +107,6 @@ public final class Constants {
     public static final int kDriverRotAxis = 4;
     public static final int kDriverFieldOrientedButtonIdx = 1;
 
-    public static final double kDeadband = 0.05;
+    public static final double kDeadband = 0.1;
 }
 }
