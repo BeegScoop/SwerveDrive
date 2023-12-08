@@ -41,6 +41,7 @@ private boolean absoluteEncoderReversed;
 //offset position
 //used to compensate for encoder error
 private double absoluteEncoderOffsetRad;
+private int turningMotorId;
 
 public SwerveModule(int driveMotorId, int turningMotorId, boolean driveMotorReversed, boolean turningMotorReversed,
                     int absoluteEncoderId, double absoluteEncoderOffset, boolean absoluteEncoderReversed){
@@ -52,7 +53,7 @@ public SwerveModule(int driveMotorId, int turningMotorId, boolean driveMotorReve
                     this.absoluteEncoder.configAbsoluteSensorRange(AbsoluteSensorRange.Signed_PlusMinus180);
                     driveMotor = new CANSparkMax(driveMotorId, MotorType.kBrushless);
                     turningMotor = new CANSparkMax(turningMotorId, MotorType.kBrushless);
-                    
+                    this.turningMotorId=turningMotorId;
 
                     driveEncoder = driveMotor.getEncoder();
                     //device number and canbus need to be changed.
@@ -90,6 +91,9 @@ public SwerveModule(int driveMotorId, int turningMotorId, boolean driveMotorReve
         angle -= absoluteEncoderOffsetRad;
         return angle * (absoluteEncoderReversed? -1.0 : 1.0);
     }
+    public double getAbsoluteEncoderReading(){
+        return absoluteEncoder.getAbsolutePosition();
+    }
     public void resetEncoders(){
         driveEncoder.setPosition(0);
         turningEncoder.setPosition(getAbsoluteEncoderRad());
@@ -109,7 +113,7 @@ public SwerveModule(int driveMotorId, int turningMotorId, boolean driveMotorReve
         driveMotor.set(state.speedMetersPerSecond / DriveConstants.kPhysicalMaxSpeedMetersPerSecond);
         turningMotor.set(turningPidController.calculate(getTurningPosition(), state.angle.getRadians()));
         // ???
-        // SmartDashboard.putString("Swerve[" + turningEncoder.getChannel() +"] state", state.toString());
+        SmartDashboard.putString("Swerve[" + turningMotorId+"] state", state.toString());
     }
     public void stop(){
         driveMotor.set(0);

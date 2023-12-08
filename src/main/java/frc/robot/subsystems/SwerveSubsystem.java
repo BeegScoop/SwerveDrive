@@ -75,8 +75,12 @@ public class SwerveSubsystem extends SubsystemBase{
     @Override
     public void periodic() {
         SmartDashboard.putNumber("Robot Heading", getHeading());
-        
-    }
+        // SmartDashboard.putNumber("Absolute Encoder 20",backLeft.getAbsoluteEncoderReading() );
+        // SmartDashboard.putNumber("Absolute Encoder 21",frontLeft.getAbsoluteEncoderReading() );
+        // SmartDashboard.putNumber("Absolute Encoder 22",backRight.getAbsoluteEncoderReading() );
+        // SmartDashboard.putNumber("Absolute Encoder 23",frontRight.getAbsoluteEncoderReading() );
+
+    }   
 
     public void stopModules() {
         frontLeft.stop();
